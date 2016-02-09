@@ -30,6 +30,9 @@ public class DisplayMessageActivity extends AppCompatActivity {
 
             }
         });
+
+
+        
         Intent intent = getIntent();
         String message = intent.getStringExtra(LandingPage.EXTRA_MESSAGE);
         TextView textView = new TextView(this);
@@ -37,6 +40,19 @@ public class DisplayMessageActivity extends AppCompatActivity {
         textView.setText(message);
         LinearLayout layout = (LinearLayout) findViewById(R.id.content);
         layout.addView(textView);
+    }
+
+    public void goToTilt(View view) {
+        /**
+         * This method bring the user to the next screen.
+         *
+         *show the usage of various javadoc Tags.
+         * @param view
+         * @return Nothing
+         */
+        Intent intent2 = new Intent(this, Tilt.class);
+        startActivity(intent2);
+
     }
 
 }

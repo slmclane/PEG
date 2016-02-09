@@ -11,6 +11,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+/**
+ * <h1>Landing Page</h1>
+ *
+ *
+ *
+ * @author  Stryker McLane
+ * @version 1.0
+ * @since   1/2016
+ */
 
 public class LandingPage extends AppCompatActivity {
 
@@ -58,6 +67,13 @@ public class LandingPage extends AppCompatActivity {
 
     /** Called when the user clicks the Send button */
     public void sendMessage(View view) {
+        /**
+         * This method bring the user to the next screen.
+         *
+         *show the usage of various javadoc Tags.
+         * @param view
+         * @return Nothing
+         */
         Intent intent = new Intent(this, DisplayMessageActivity.class);
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
@@ -68,9 +84,15 @@ public class LandingPage extends AppCompatActivity {
     }
     /** Called when the user clicks the TILT! button */
     public void goToTilt(View view) {
+        /**
+         * This method bring the user to the next screen.
+         *
+         *show the usage of various javadoc Tags.
+         * @param view
+         * @return Nothing
+         */
         Intent intent2 = new Intent(this, Tilt.class);
         startActivity(intent2);
 
-        // Do something in response to button
     }
 }

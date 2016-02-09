@@ -18,7 +18,7 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
 
     private static final String TAG = "MainActivity";
 
-    private TextView tv;
+    private TextView tv, tv1, tv2;
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private Sensor magnetometer;
@@ -27,6 +27,13 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /**
+         * This method bring the user to the next screen.
+         *
+         *show the usage of various javadoc Tags.
+         * @param view
+         * @return Nothing
+         */
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tilt);
 
@@ -34,11 +41,12 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
 
 
         // Keep the screen on
-        // https://developer.android.com/training/scheduling/wakelock.html#screen
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         // Grab the layout TextView
         tv = (TextView) findViewById(R.id.tv_tilt);
+        tv1 = (TextView) findViewById(R.id.tv_tilt1);
+        tv2 = (TextView) findViewById(R.id.tv_tilt2);
 
         // Setup the sensors
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -88,13 +96,20 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
      * Convert degrees to absolute tilt value between 0-100
      */
     private int degreesToPower(int degrees) {
+        /**
+         * This method converts the current angle of the phone
+         * an int between 1 and 100.
+         *
+         * @param degrees
+         * @return Nothing
+         */
         // Tilted back towards user more than -90 deg
         if (degrees < -90) {
             degrees = -90;
         }
         // Tilted forward past 0 deg
-        else if (degrees > 0) {
-            degrees = 0;
+        else if (degrees > 90) {
+            degrees = 90;
         }
         // Normalize into a positive value
         degrees *= -1;
@@ -105,8 +120,26 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
         return (int) degFloat;
     }
 
+    static final float ALPHA = 0.25f; // if ALPHA = 1 OR 0, no filter applies.
+
+    protected float[] lowPass( float[] input, float[] output ) {
+        if ( output == null ) return input;
+        for ( int i=0; i<input.length; i++ ) {
+            output[i] = output[i] + ALPHA * (input[i] - output[i]);
+        }
+        return output;
+    }
+
+
     @Override
     public void onSensorChanged(SensorEvent event) {
+        /**
+         * This method bring the user to the next screen.
+         *
+         *show the usage of various javadoc Tags.
+         * @param view
+         * @return Nothing
+         */
         //Log.d(TAG, "onSensorChanged()");
         if (event.values == null) {
             Log.w(TAG, "event.values is null");
@@ -141,11 +174,19 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
         float orientation[] = new float[9];
         SensorManager.getOrientation(R, orientation);
         // Orientation contains: azimuth, pitch and roll - we'll use roll
+        float azimuth = orientation[0];
+        float pitch = orientation[1];
         float roll = orientation[2];
         int rollDeg = (int) Math.round(Math.toDegrees(roll));
-        int power = degreesToPower(rollDeg);
+        int pitchDeg = (int) Math.round(Math.toDegrees(pitch));
+        int azimuthDeg = (int) Math.round(Math.toDegrees(azimuth));
+        int pitchPower = degreesToPower(pitchDeg);
+        int azimuthPower = degreesToPower(azimuthDeg);
+        int rollPower = degreesToPower(rollDeg);
         //Log.d(TAG, "deg=" + rollDeg + " power=" + power);
-        tv.setText(String.valueOf(power));
+        tv1.setText(String.valueOf(pitchPower));
+        tv2.setText(String.valueOf(rollPower));
+        tv.setText(String.valueOf(azimuthDeg));
     }
 
     @Override

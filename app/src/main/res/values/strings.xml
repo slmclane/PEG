@@ -7,4 +7,13 @@
 
     <string name="button_tilt">TILT!</string>
     <string name="title_activity_display_message">My Message</string>
+
+    <string name="azimuthplus">Radial Deviaion</string>
+    <string name="azimuthminus">Ulnar Deviation</string>
+    <string name="pitchplus">Extension</string>
+    <string name="pitchminus">Flexion</string>
+    <string name="rollplus">Pronation</string>
+    <string name="rollminus">Supination</string>
+
+
 </resources>

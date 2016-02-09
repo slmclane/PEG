@@ -13,9 +13,15 @@
 
     <TextView android:text="Hello, " android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <TextView android:text="I love you! " android:layout_width="wrap_content"
+    <TextView android:text="Let's PEG!" android:layout_width="wrap_content"
         android:layout_height="100dp" />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goToTilt"
+            android:background="@drawable/button"
+            android:text="@string/button_tilt"
+            android:textColor="#FFFFFF"/>
 
 </LinearLayout>
