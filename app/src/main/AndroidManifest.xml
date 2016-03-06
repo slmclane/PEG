@@ -23,7 +23,13 @@
             android:label="@string/title_activity_display_message"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".Tilt" >
+        <activity android:name=".radialulnardeviation" android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
+        </activity>
+        <activity android:name=".Fragments" >
+        </activity>
+        <activity android:name=".flexionextension" android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
+        </activity>
+        <activity android:name=".pronationsupination" android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
         </activity>
     </application>
 

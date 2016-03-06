@@ -40,7 +40,8 @@
         <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+            android:layout_weight="0.85">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,14 +50,39 @@
         android:textColor="#FFFFFF"
         android:background="@drawable/button" />
 
-    <Button
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goToRadialUlnarDeviation"
+            android:background="@drawable/button"
+            android:text="@string/title_activity_RadialUlnarDeviation"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goToFlexionExtension"
+            android:background="@drawable/button"
+            android:text="@string/title_activity_FlexionExtension"
+            android:textColor="#FFFFFF"/>
+
+            <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="goToTilt"
+        android:onClick="goToPronationSupination"
         android:background="@drawable/button"
-        android:text="@string/button_tilt"
+        android:text="@string/title_activity_PronationSupination"
         android:textColor="#FFFFFF"/>
-</LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>

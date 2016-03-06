@@ -2,8 +2,6 @@ package com.example.strykermclane.peg;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -32,15 +30,6 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -83,7 +72,7 @@ public class LandingPage extends AppCompatActivity {
         // Do something in response to button
     }
     /** Called when the user clicks the TILT! button */
-    public void goToTilt(View view) {
+    public void goToRadialUlnarDeviation(View view) {
         /**
          * This method bring the user to the next screen.
          *
@@ -91,8 +80,34 @@ public class LandingPage extends AppCompatActivity {
          * @param view
          * @return Nothing
          */
-        Intent intent2 = new Intent(this, Tilt.class);
-        startActivity(intent2);
+        Intent intentRadialUlnarDeviation = new Intent(this, radialulnardeviation.class);
+        startActivity(intentRadialUlnarDeviation);
+
+    }
+    /** Called when the user clicks the TILT! button */
+    public void goToPronationSupination(View view) {
+        /**
+         * This method bring the user to the next screen.
+         *
+         *show the usage of various javadoc Tags.
+         * @param view
+         * @return Nothing
+         */
+        Intent intentPronationSupination = new Intent(this, pronationsupination.class);
+        startActivity(intentPronationSupination);
+
+    }
+    /** Called when the user clicks the TILT! button */
+    public void goToFlexionExtension(View view) {
+        /**
+         * This method bring the user to the next screen.
+         *
+         *show the usage of various javadoc Tags.
+         * @param view
+         * @return Nothing
+         */
+        Intent intentFlexionExtension = new Intent(this, flexionextension.class);
+        startActivity(intentFlexionExtension);
 
     }
 }

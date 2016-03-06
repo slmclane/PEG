@@ -14,11 +14,11 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 
-public class Tilt extends AppCompatActivity implements SensorEventListener {
+public class radialulnardeviation extends AppCompatActivity implements SensorEventListener {
 
     private static final String TAG = "MainActivity";
 
-    private TextView tv, tv1, tv2;
+    private TextView tv;
     private SensorManager sensorManager;
     private Sensor accelerometer;
     private Sensor magnetometer;
@@ -35,9 +35,9 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
          * @return Nothing
          */
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tilt);
+        setContentView(R.layout.activity_radialulnardeviation);
 
-        Intent intent2 = getIntent();
+        Intent intentRadialUlnarDeviation = getIntent();
 
 
         // Keep the screen on
@@ -45,8 +45,6 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
 
         // Grab the layout TextView
         tv = (TextView) findViewById(R.id.tv_tilt);
-        tv1 = (TextView) findViewById(R.id.tv_tilt1);
-        tv2 = (TextView) findViewById(R.id.tv_tilt2);
 
         // Setup the sensors
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -175,18 +173,10 @@ public class Tilt extends AppCompatActivity implements SensorEventListener {
         SensorManager.getOrientation(R, orientation);
         // Orientation contains: azimuth, pitch and roll - we'll use roll
         float azimuth = orientation[0];
-        float pitch = orientation[1];
-        float roll = orientation[2];
-        int rollDeg = (int) Math.round(Math.toDegrees(roll));
-        int pitchDeg = (int) Math.round(Math.toDegrees(pitch));
         int azimuthDeg = (int) Math.round(Math.toDegrees(azimuth));
-        int pitchPower = degreesToPower(pitchDeg);
         int azimuthPower = degreesToPower(azimuthDeg);
-        int rollPower = degreesToPower(rollDeg);
         //Log.d(TAG, "deg=" + rollDeg + " power=" + power);
-        tv1.setText(String.valueOf(pitchPower));
-        tv2.setText(String.valueOf(rollPower));
-        tv.setText(String.valueOf(azimuthDeg));
+        tv.setText(String.valueOf(azimuthPower));
     }
 
     @Override
