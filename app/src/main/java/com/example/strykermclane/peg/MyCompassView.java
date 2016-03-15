@@ -13,7 +13,7 @@ public class MyCompassView extends View {
     private Paint paintRed;
     private Paint paintWhite;
     private float position = 0;
-    boolean exerswitch = false;
+    int exerSwitchCompass;
 
     public MyCompassView(Context context) {
         super(context);
@@ -75,11 +75,17 @@ public class MyCompassView extends View {
         tempY = (float) (yPoint - radius * Math.cos((double) (30) / 180 * 3.143));
 
         p.lineTo(tempX, tempY);
-        if(exerswitch){
-            canvas.drawText(("Pronation"), tempX, tempY, paintRed);
-        }
-        else{
-            canvas.drawText(("Extension"), tempX, tempY, paintRed);
+
+        switch(exerSwitchCompass) {
+            case 0:
+                canvas.drawText(("Radial Deviation"), tempX, tempY, paintRed);
+                break;
+            case 1:
+                canvas.drawText(("Pronation"), tempX, tempY, paintRed);
+                break;
+            case 2:
+                canvas.drawText(("Extension"), tempX, tempY, paintRed);
+                break;
         }
         p.moveTo(xPoint, yPoint);
 
@@ -87,11 +93,17 @@ public class MyCompassView extends View {
         tempY = (float) (yPoint - radius * Math.cos((double) (150) / 180 * 3.143));
 
         p.lineTo(tempX, tempY);
-        if(exerswitch){
-            canvas.drawText(("Supination"), tempX, tempY, paintRed);
-        }
-        else{
-            canvas.drawText(("Flexion"), tempX, tempY, paintRed);
+
+        switch(exerSwitchCompass) {
+            case 0:
+                canvas.drawText(("Ulnar Deviation"), tempX, tempY, paintRed);
+                break;
+            case 1:
+                canvas.drawText(("Supination"), tempX, tempY, paintRed);
+                break;
+            case 2:
+                canvas.drawText(("Flexion"), tempX, tempY, paintRed);
+                break;
         }
         canvas.drawPath(p, paintRed);
 

@@ -24,7 +24,7 @@ public class pronationsupination extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         compassView2 = new MyCompassView(this);
-        compassView2.exerswitch = true;
+        compassView2.exerSwitchCompass = 1;
         setContentView(compassView2);
 
 
@@ -54,7 +54,7 @@ public class pronationsupination extends Activity {
         public void onSensorChanged(SensorEvent event) {
             // angle between the magnetic north direction
             // 0=North, 90=East, 180=South, 270=West
-            float pitch = event.values[1] + 270;
+            float pitch = event.values[0] + 270;
             compassView2.updateData(pitch);
         }
     };

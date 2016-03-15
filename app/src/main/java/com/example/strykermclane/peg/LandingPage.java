@@ -80,7 +80,9 @@ public class LandingPage extends AppCompatActivity {
          * @param view
          * @return Nothing
          */
-        Intent intentRadialUlnarDeviation = new Intent(this, radialulnardeviation.class);
+        int exerSwitch = 3;
+        Intent intentRadialUlnarDeviation = new Intent(this, exerciseActivity.class);
+        intentRadialUlnarDeviation.putExtra("exerSwitch",0);
         startActivity(intentRadialUlnarDeviation);
 
     }
@@ -93,7 +95,9 @@ public class LandingPage extends AppCompatActivity {
          * @param view
          * @return Nothing
          */
-        Intent intentPronationSupination = new Intent(this, pronationsupination.class);
+        int exerSwitch = 3;
+        Intent intentPronationSupination = new Intent(this, exerciseActivity.class);
+        intentPronationSupination.putExtra("exerSwitch",1);
         startActivity(intentPronationSupination);
 
     }
@@ -106,7 +110,9 @@ public class LandingPage extends AppCompatActivity {
          * @param view
          * @return Nothing
          */
-        Intent intentFlexionExtension = new Intent(this, flexionextension.class);
+        int exerSwitch = 3;
+        Intent intentFlexionExtension = new Intent(this, exerciseActivity.class);
+        intentFlexionExtension.putExtra("exerSwitch",2);
         startActivity(intentFlexionExtension);
 
     }

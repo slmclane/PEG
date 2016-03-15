@@ -11,12 +11,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-public class flexionextension extends Activity {
+public class exerciseActivity extends Activity {
 
     private static SensorManager sensorService;
     private MyCompassView compassView;
     private Sensor sensor;
-
+    int exerSwitchCompass;
     /** Called when the activity is first created. */
 
     @Override
@@ -25,8 +25,19 @@ public class flexionextension extends Activity {
         compassView = new MyCompassView(this);
         setContentView(compassView);
 
-
-        Intent intentFlexionExtension = getIntent();
+        Intent myIntent = getIntent();
+        exerSwitchCompass = (myIntent.getIntExtra("exerSwitch",3));
+        switch(exerSwitchCompass){
+            case 0:
+                compassView.exerSwitchCompass = 0;
+                break;
+            case 1:
+                compassView.exerSwitchCompass = 1;
+                break;
+            case 2:
+                compassView.exerSwitchCompass = 2;
+                break;
+        }
 
         sensorService = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         sensor = sensorService.getDefaultSensor(Sensor.TYPE_ORIENTATION);
@@ -50,10 +61,20 @@ public class flexionextension extends Activity {
 
         @Override
         public void onSensorChanged(SensorEvent event) {
-            // angle between the magnetic north direction
-            // 0=North, 90=East, 180=South, 270=West
-            float roll = event.values[2] + 270;
-            compassView.updateData(roll);
+
+            float orientationGesture = 0;
+            switch(exerSwitchCompass){
+                case 0:
+                    orientationGesture = event.values[0] + 270;
+                    break;
+                case 1:
+                    orientationGesture = event.values[1] + 270;
+                    break;
+                case 2:
+                    orientationGesture = event.values[2] + 270;
+                    break;
+            }
+            compassView.updateData(orientationGesture);
         }
     };
 
