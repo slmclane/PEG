@@ -1,0 +1,200 @@
+<resources>
+<string name="careGuide0">
+        <![CDATA[
+    <h2>
+        What is Carpal Tunnel?</h2>
+    <ul>
+        <li>Injury to the median nerve.</li>
+        <li>
+
+            The median nerve travels down the arm and enters a tight space near the wrist called the carpal tunnel.</li>
+        <li>
+            If the space becomes congested (swelling, bony changes, repetitive movements) it can cause pinching or compression on the median nerve, causing symptoms.</li>
+    </ul>
+
+
+    <h2>How to prevent Carpal Tunnel?</h2>
+    <ul>
+        <li>
+
+            Try to keep wrist in neutral position during activities</li>
+        <li>
+            Avoid sustained pinch or gripping</li>
+        <li>
+            Avoid repetitive overuse of the wrist during activities</li>
+        <li>
+            Avoid positioning wrist in bent or flexed posture when sleeping</li>
+        <li>
+            Have an ergonomic workstation </li>
+
+    </ul>
+
+    <h2>
+        What is pregnancy induced CTS?</h2>
+
+    <ul>
+        <li>
+            Usually occurs in 3rd trimester</li>
+        <li>
+            Pressure or swelling in the carpal tunnel puts pressure on the median nerve, causing symptoms</li>
+        <li>
+            Symptoms normally resolve postpartum</li>
+
+    </ul>
+
+    <h2>
+        Symptoms of CT</h2>
+
+    <ul>
+        <li>
+            Numbness and tingling in the thumb, index, and middle fingers</li>	<li>
+
+        Loss of dexterity </li>
+        <li>
+            Symptoms worse at night</li>
+        <li>
+            Symptoms worsened by repetitive forceful hand motion </li>
+        <li>
+            Improvement of symptoms after shaking or straightening the affected hand</li>
+    </ul>
+
+    <h2>
+        Conservative Management for CTS</h2>
+
+    <ul>
+        <li>
+            Orthotics (custom or over the counter splint) to decrease CT pressure by positioning wrist in neutral</li>
+        <li>
+            Orthotics most effective if used within the first 3 months of symptom onset</li>
+        <li>
+            Orthotic should be worn at night and during the day if necessary </li>
+    </ul>
+
+    ]]>
+</string>
+<string name="careGuide1">
+        <![CDATA[
+    <h2>
+        Postoperative Management </h2>
+
+
+    Blurb about: Follow doctor instructions as recommended. Patient Exercise Guide should be used …..
+    <h3>Week 1: </h3>
+
+    <ul>
+        <li>
+            Take pain medication as instructed by doctor</li>
+        <li>
+            Keep dressing clean, dry, and intact.</li>
+        <li>
+            Small amounts of drainage at incision site are normal. If drainage appears yellow or green, has a change in odor, is red or hard around surrounding area, call doctor.</li>
+        <li>
+            Wear splint during all activities. </li>
+        <li>
+            Wiggle finger tips while wearing splint 5x per day at least</li>
+        <li>
+            No heavy lifting (no more than a coffee mug) or strenuous activity unless cleared by doctor. </li>
+    </ul>
+    ]]>
+
+</string>
+<string name="careGuide2">
+        <![CDATA[
+    <h3>
+        Week 2:</h3>
+
+    <ul>
+        <li>
+            Take pain medication as instructed by doctor</li>
+        <li>
+            Keep dressing clean, dry, and intact.</li>
+        <li>
+            Small amounts of drainage at incision site are normal. If drainage appears yellow or green, has a change in odor, is red or hard around surrounding area, call doctor.</li>
+        <li>
+            Wear splint during all activities. </li>
+        <li>
+            Wiggle finger tips while wearing splint 5x per day at least</li>
+        <li>
+            No heavy lifting (no more than a coffee mug) or strenuous activity unless cleared by doctor. </li>
+    </ul>
+    ]]>
+</string>
+<string name="careGuide3">
+
+        <![CDATA[
+    <h3>
+        Week 3: </h3>
+
+    <ul>
+        <li>
+            After cleared from surgeon begin exercise program. </li>
+        <li>
+            Complete exercises 5-10 repetitions 3-5x per day, as tolerated </li>
+        <li>
+            Range of Motion Exercises – complete all these exercises actively, with no assistance from your unaffected hand </li>
+        <li>
+            Tendon Gliding</li>
+        <li>
+            Thumb flexion, extension, opposition - AROM </li>
+        <li>
+            Gentle wrist flexion and extension - AROM</li>
+        <li>
+            Use degrees to track your progress!</li>
+
+        <li>Desensitization: After sutures are removed and incision is cleared by doctor begin scar massage.</li>
+        <li>
+            Desensitization: Rub scar site during the day with different textures. </li>
+        <li>
+            Scar tissue management</li>
+        <li>
+            Scar massage </li>
+        <li>
+            Apply a thick lotion or cream to your scar and in a use fingers to rub firmly in a circular motion all around and on scar site. </li>
+    </ul>
+    ]]>
+</string>
+<string name="careGuide4">
+
+    <![CDATA[
+    <h3>Week 4 -6 </h3>
+
+    <ul>
+        <li>
+            After cleared from surgeon begin exercise program. </li>
+        <li>
+            Complete exercises 5-10 repetitions 3-5x per day, as tolerated </li>
+        <li>
+            Range of Motion Exercises – complete all these exercises actively, with no assistance from your unaffected hand </li>
+        <li>
+            Tendon Gliding</li>
+        <li>
+            Thumb flexion, extension, opposition - AROM </li>
+        <li>
+            Gentle wrist flexion and extension - AROM</li>
+        <li>
+            Use degrees to track your progress!</li>
+        <li>
+            Desensitization: After sutures are removed and incision is cleared by doctor begin scar massage.</li>
+        <li>
+            Desensitization: Rub scar site during the day with different textures. </li>
+        <li>
+            Scar tissue management</li>
+        <li>
+            Scar massage 	</li>
+        <li>
+            Apply a thick lotion or cream to your scar and in a use fingers to rub firmly in a circular motion all around and on scar site. </li>
+        <li>
+            NEW! – Strengthening </li>
+        <li>
+            Complete exercises 5-10 repetitions 3-5x per day, as tolerated </li>
+        <li>
+            Strengthening: Squeeze rubber ball</li>
+        <li>
+            Strengthening: Wrist curls with 3 pound weight</li>
+        <li>
+            .. other wrist stuff </li>
+
+    </ul>
+    ]]>
+</string>
+</resources>

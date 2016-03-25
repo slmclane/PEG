@@ -7,7 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 
 /**
  * <h1>Landing Page</h1>
@@ -63,11 +62,8 @@ public class LandingPage extends AppCompatActivity {
          * @param view
          * @return Nothing
          */
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        Intent myIntent = new Intent(this, careguide.class);
+        startActivity(myIntent);
 
         // Do something in response to button
     }

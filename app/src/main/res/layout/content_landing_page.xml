@@ -27,62 +27,70 @@
     </LinearLayout>
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="50dp">
 
-    <EditText android:id="@+id/edit_message"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/edit_message" />
-
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-            android:layout_weight="0.85">
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="sendMessage"
-        android:text="@string/button_send"
-        android:textColor="#FFFFFF"
-        android:background="@drawable/button" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/header_careGuide"
+            android:id="@+id/careGuideHeader"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="#050089"
+            android:textSize="20dp"
+            android:layout_weight="0.85" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="goToRadialUlnarDeviation"
+            android:onClick="sendMessage"
+            android:text="@string/button_careGuide"
+            android:textColor="#FFFFFF"
             android:background="@drawable/button"
-            android:text="@string/title_activity_RadialUlnarDeviation"
-            android:textColor="#FFFFFF"/>
+            android:width="250dp"
+            android:layout_margin="5dp"
+            android:layout_weight="0.85" />
 
-        <Button
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="goToFlexionExtension"
-            android:background="@drawable/button"
-            android:text="@string/title_activity_FlexionExtension"
-            android:textColor="#FFFFFF"/>
+            android:text="@string/header_exercises"
+            android:id="@+id/exercisesHeader"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="#050089"
+            android:textSize="20sp" />
 
-            <Button
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="goToPronationSupination"
+        android:onClick="goToFlexionExtension"
         android:background="@drawable/button"
-        android:text="@string/title_activity_PronationSupination"
-        android:textColor="#FFFFFF"/>
-        </LinearLayout>
+        android:text="@string/title_activity_FlexionExtension"
+        android:textColor="#FFFFFF"
+        android:width="250dp" />
 
+        <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:onClick="goToPronationSupination"
+    android:background="@drawable/button"
+    android:text="@string/title_activity_PronationSupination"
+    android:textColor="#FFFFFF"
+            android:width="250dp" />
+
+        <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="goToRadialUlnarDeviation"
+        android:background="@drawable/button"
+        android:text="@string/title_activity_RadialUlnarDeviation"
+        android:textColor="#FFFFFF"
+        android:width="250dp" />
     </LinearLayout>
 
 </LinearLayout>

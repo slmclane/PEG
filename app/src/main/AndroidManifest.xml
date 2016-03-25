@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.strykermclane.peg" >
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,13 +25,14 @@
             android:label="@string/title_activity_display_message"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
-        <activity android:name=".radialulnardeviation" android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
+        <activity android:name=".careguide" >
         </activity>
         <activity android:name=".Fragments" >
         </activity>
-        <activity android:name=".exerciseActivity" android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
-        </activity>
-        <activity android:name=".pronationsupination" android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
+        <activity
+            android:name=".exerciseActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="landscape" >
         </activity>
     </application>
 
