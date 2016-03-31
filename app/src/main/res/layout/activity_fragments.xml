@@ -14,12 +14,12 @@
     android:background="#BBBBFF">
 
     <Button
-    android:id="@+id/button1"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textColor="#FFFFFF"
-    android:text="Home"
-    android:background="@drawable/button"/>
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:text="Home"
+        android:background="@drawable/button"/>
 
     <Button
         android:id="@+id/button2"

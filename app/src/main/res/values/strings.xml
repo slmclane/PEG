@@ -8,6 +8,10 @@
     <string name="header_careGuide">Read the Care Guide:</string>
     <string name="header_exercises">Exercise your Wrist:</string>
 
+    <string name="settings">Settings</string>
+    <string name="bar_CareGuide">Care Guide</string>
+    <string name="bar_HandExercises">Hand Exercises</string>
+
     <string name="button_tilt">TILT!</string>
     <string name="title_activity_display_message">My Message</string>
 
@@ -33,5 +37,6 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_hand_exercises">HandExercises</string>
 
 </resources>

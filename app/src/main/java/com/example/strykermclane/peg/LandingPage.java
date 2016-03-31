@@ -46,8 +46,13 @@ public class LandingPage extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.bar_CareGuide) {
+            Intent myIntent = new Intent(this, careguide.class);
+            startActivity(myIntent);
+        }
+        else if (id == R.id.bar_HandExercises) {
+            Intent myIntent = new Intent(this, HandExercises.class);
+            startActivity(myIntent);
         }
 
         return super.onOptionsItemSelected(item);

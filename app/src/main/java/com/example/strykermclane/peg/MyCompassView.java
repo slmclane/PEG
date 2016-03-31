@@ -183,6 +183,9 @@ public class MyCompassView extends View {
         canvas.drawPath(p, paintRed);
 
 
+
+
+
         if(exerSwitchCompass == 0) {
             position -= defaultDeviation;
         }
