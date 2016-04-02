@@ -9,8 +9,16 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import android.graphics.SweepGradient;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class MyCompassView extends View {
 
@@ -25,13 +33,14 @@ public class MyCompassView extends View {
     private int maxUlnarDeviation = 40;
     private int maxRadialDeviation = -25;
 
+    String newString = "blank";
+
     private int regulateValue(int currentPosition)
     {
         int regulatedValue = 0;
         regulatedValue = 90 - currentPosition;
         return regulatedValue;
     }
-
 
     private Paint paintGreen;
     private Paint paintRed;
@@ -45,6 +54,7 @@ public class MyCompassView extends View {
     private String currentRotation;
     public int maxUpper = 0;
     public int maxLower = 0;
+    int[] userMaximumArray = new int[2];
 
     public MyCompassView(Context context) {
         super(context);
@@ -82,11 +92,13 @@ public class MyCompassView extends View {
         paintGradient.setStrokeWidth(1);
         paintGradient.setStrokeCap(Paint.Cap.SQUARE);
         paintGradient.setStyle(Paint.Style.FILL);
+
+        getUserMaximum();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-
+        
         int xPoint = getMeasuredWidth() / 2;
         int yPoint = getMeasuredHeight() / 2;
 
@@ -119,7 +131,8 @@ public class MyCompassView extends View {
         Path p = new Path();
         p.moveTo(xPoint, yPoint);
         p.lineTo(tempX, tempY); // neutral position line
-        canvas.drawText(String.valueOf(defaultDeviation), tempX, tempY, paintRed);
+        //canvas.drawText(String.valueOf(defaultDeviation), tempX, tempY, paintRed);
+        canvas.drawText(String.valueOf(newString), tempX, tempY, paintRed);
         p.moveTo(xPoint, yPoint);
 
 
@@ -184,8 +197,6 @@ public class MyCompassView extends View {
 
 
 
-
-
         if(exerSwitchCompass == 0) {
             position -= defaultDeviation;
         }
@@ -211,12 +222,14 @@ public class MyCompassView extends View {
     }
 
     @Override
-     public boolean onTouchEvent(MotionEvent ev) {
+    public boolean onTouchEvent(MotionEvent ev) {
 
         switch (ev.getAction()) {
 
             case MotionEvent.ACTION_DOWN: {
-                    calibrateButtonClicked();
+                calibrateButtonClicked();
+                syncUserMaximum();
+
                 break;
             }
             case MotionEvent.ACTION_MOVE: {
@@ -234,6 +247,62 @@ public class MyCompassView extends View {
             vibeSwitch = true;
         }
         invalidate();
+    }
+
+    void syncUserMaximum(){
+        Context context = this.getContext();
+        String maxUpperString = Integer.toString(maxUpper);
+        String maxLowerString = Integer.toString(maxLower);
+        String userMax = maxUpperString +","+ maxLowerString;
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recovery.txt", Context.MODE_PRIVATE));
+            outputStreamWriter.write(userMax);
+            outputStreamWriter.close();
+        }
+        catch (IOException e) {
+            Log.e("Exception", "File write failed: " + e.toString());
+        }
+    }private String readFromFile() {
+        Context context = this.getContext();
+
+        String ret = "";
+
+        try {
+            InputStream inputStream = context.openFileInput("recovery.txt");
+
+            if ( inputStream != null ) {
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                String receiveString = "";
+                StringBuilder stringBuilder = new StringBuilder();
+
+                while ( (receiveString = bufferedReader.readLine()) != null ) {
+                    stringBuilder.append(receiveString);
+                }
+
+                inputStream.close();
+                ret = stringBuilder.toString();
+            }
+        }
+        catch (FileNotFoundException e) {
+            Log.e("login activity", "File not found: " + e.toString());
+        } catch (IOException e) {
+            Log.e("login activity", "Can not read file: " + e.toString());
+        }
+
+        return ret;
+    }
+
+    void getUserMaximum(){
+        newString = readFromFile();
+        int[] userMaxInput = new int[2];
+        String[] userMaxInputString;
+        userMaxInputString = newString.split(",",2);
+        for(int i = 0;i<2;i++){
+            userMaxInput[i] = Integer.valueOf(userMaxInputString[i]);
+        }
+        maxUpper = userMaxInput[0];
+        maxLower = userMaxInput[1];
     }
 
 }
