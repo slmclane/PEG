@@ -39,4 +39,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_hand_exercises">HandExercises</string>
 
+    <string-array name="choices">
+        <item>Flexion Extension</item>
+        <item>Pronation Supination</item>
+        <item>Radial Ulnar Deviation</item>
+    </string-array>
+
 </resources>
