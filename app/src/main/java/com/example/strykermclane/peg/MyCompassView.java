@@ -35,6 +35,8 @@ public class MyCompassView extends View {
     private int maxUlnarDeviation = 40;
     private int maxRadialDeviation = -25;
 
+    String newString = "blank";
+
     private int regulateValue(int currentPosition)
     {
         int regulatedValue = 0;
@@ -129,7 +131,8 @@ public class MyCompassView extends View {
         Path p = new Path();
         p.moveTo(xPoint, yPoint);
         p.lineTo(tempX, tempY); // neutral position line
-        canvas.drawText(String.valueOf(defaultDeviation), tempX, tempY, paintRed);
+        //canvas.drawText(String.valueOf(defaultDeviation), tempX, tempY, paintRed);
+        canvas.drawText(String.valueOf(newString), tempX, tempY, paintRed);
         p.moveTo(xPoint, yPoint);
 
 
@@ -225,6 +228,9 @@ public class MyCompassView extends View {
 
             case MotionEvent.ACTION_DOWN: {
                     calibrateButtonClicked();
+                    syncUserMaximum();
+                newString = readFromFile();
+
                 break;
             }
             case MotionEvent.ACTION_MOVE: {
