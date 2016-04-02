@@ -5,5 +5,9 @@
         android:title="@string/bar_CareGuide"
         app:showAsAction="ifRoom"
         />
+    <item android:id = "@+id/bar_Exercise"
+        android:title="@string/bar_HandExercises"
+        app:showAsAction="ifRoom"
+        />
 
 </menu>

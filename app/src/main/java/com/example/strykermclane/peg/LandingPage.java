@@ -29,6 +29,7 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        setTitle("PEG");
     }
 
     @Override
@@ -48,10 +49,6 @@ public class LandingPage extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.bar_CareGuide) {
             Intent myIntent = new Intent(this, careguide.class);
-            startActivity(myIntent);
-        }
-        else if (id == R.id.bar_HandExercises) {
-            Intent myIntent = new Intent(this, HandExercises.class);
             startActivity(myIntent);
         }
 
@@ -116,5 +113,13 @@ public class LandingPage extends AppCompatActivity {
         intentFlexionExtension.putExtra("exerSwitch",2);
         startActivity(intentFlexionExtension);
 
+    }
+    public void goToHand(View view){
+        Intent myIntent = new Intent(this, HandExercises.class);
+        startActivity(myIntent);
+    }
+    public void goToRecovery(View view){
+        Intent myIntent = new Intent(this, Recover.class);
+        startActivity(myIntent);
     }
 }

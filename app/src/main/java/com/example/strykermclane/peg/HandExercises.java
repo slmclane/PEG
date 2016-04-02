@@ -18,7 +18,7 @@ public class HandExercises extends AppCompatActivity {
         setContentView(R.layout.activity_hand_exercises);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setTitle("Hand Exercises");
+        setTitle("Exercises");
 
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
 // Create an ArrayAdapter using the string array and a default spinner layout
@@ -45,6 +45,10 @@ public class HandExercises extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.bar_CareGuide2) {
             Intent myIntent = new Intent(this, careguide.class);
+            startActivity(myIntent);
+        }
+        else if(id == R.id.bar_recover){
+            Intent myIntent = new Intent(this, Recover.class);
             startActivity(myIntent);
         }
         return super.onOptionsItemSelected(item);

@@ -10,7 +10,7 @@
 
     <string name="settings">Settings</string>
     <string name="bar_CareGuide">Care Guide</string>
-    <string name="bar_HandExercises">Hand Exercises</string>
+    <string name="bar_HandExercises">Exercises</string>
 
     <string name="button_tilt">TILT!</string>
     <string name="title_activity_display_message">My Message</string>
@@ -44,5 +44,6 @@
         <item>Pronation Supination</item>
         <item>Radial Ulnar Deviation</item>
     </string-array>
+    <string name="title_activity_recover">Recover</string>
 
 </resources>

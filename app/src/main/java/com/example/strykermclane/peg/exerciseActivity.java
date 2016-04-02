@@ -74,6 +74,7 @@ public class exerciseActivity extends Activity implements SensorEventListener{
                     Toast.LENGTH_LONG).show();
             finish();
         }
+
         magnetometer = sensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
         if (magnetometer != null) {
             sensorManager.registerListener(this, magnetometer, SensorManager.SENSOR_DELAY_UI);
@@ -81,10 +82,11 @@ public class exerciseActivity extends Activity implements SensorEventListener{
         }
         else{
                 Log.d("Compass MainActivity", "magnetometer is null");
-                Toast.makeText(this, "accelerometer is null",
+                Toast.makeText(this, "magnetometer is null, BIATCH!",
                         Toast.LENGTH_LONG).show();
                 finish();
         }
+
     }
 
 
